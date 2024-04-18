@@ -2,6 +2,9 @@
 
 ![image](https://github.com/2024-Winter-ITE-5425-0NB/angular-project-client-theuisquads/assets/97482188/de743fb8-a9a0-46be-95c0-c8e54e59c452)
 
+-Published URL
+
+
 ## Overview
 
 Media Play is a video streaming website where you stream your favorite movies and TV shows with ease, offering a diverse selection to suit every taste and mood.
