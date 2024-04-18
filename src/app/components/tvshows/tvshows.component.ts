@@ -1,48 +1,45 @@
-import { CommonModule } from '@angular/common';
-import { Component , OnInit} from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
+import { Component } from '@angular/core';
+import { TvService } from '../../services/tv.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { FavouritesService } from '../../services/favourites.service';
-
-
-export interface Movie {
+interface TVShow {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
   id: number;
+  origin_country: string[];
   original_language: string;
-  original_title: string;
+  original_name: string;
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: string;
-  title: string;
-  video: boolean;
+  first_air_date: string;
+  name: string;
   vote_average: number;
   vote_count: number;
 }
 
-interface Movies {
-  results: Movie[]
+interface TVShows{
+  results:TVShow[];
 }
 @Component({
-  selector: 'app-movies',
+  selector: 'app-tvshows',
   standalone: true,
-  imports: [CommonModule,FormsModule],
-  templateUrl: './movies.component.html',
-  styleUrl: './movies.component.css'
+  imports: [FormsModule,CommonModule],
+  templateUrl: './tvshows.component.html',
+  styleUrl: './tvshows.component.css'
 })
-export class MoviesComponent implements OnInit {
- 
+export class TvshowsComponent {
   genres: any[] = [];
   languages: any[] = [];
   releaseDateURL: string='';
   languageURL: string='';
   genreURL: number[] = [];
-  movieList: Movie[] = [];
+  tvList: TVShow[] = [];
 
-  constructor(private movieService: MoviesService,private router:Router,private favoritesService:FavouritesService) { }
+  constructor(private tvService: TvService,private router:Router, private favoritesService: FavouritesService) { }
 
   ngOnInit(): void {
     this.fetchGenreAndLanguage();
@@ -53,7 +50,7 @@ export class MoviesComponent implements OnInit {
     try {
       let params = `page=1`;
       if (this.releaseDateURL) {
-        params += `&primary_release_date.gte=${this.releaseDateURL}&primary_release_date.lte=${this.releaseDateURL}`;
+        params += `&first_air_date.gte=${this.releaseDateURL}&first_air_date.lte=${this.releaseDateURL}`;
       }
       if (this.languageURL) {
         params += `&language=${this.languageURL}`;
@@ -62,30 +59,27 @@ export class MoviesComponent implements OnInit {
         params += `&with_genres=${this.genreURL.join(',')}`;
       }
 
-      const response: any = await this.movieService.getMovies(params);
+      const response: any = await this.tvService.getTVShows(params);
 
+      console.log("TV= "+response.results[0].name)
       if (response && response.results.length > 0) {
-        this.movieList = response.results;
+        this.tvList = response.results;
+        console.log(this.tvList[0].name)
       }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
-  addToFavorites(movie: any) {
-    console.log("fav movie= "+movie)
-    this.favoritesService.addToFavorites(movie);
-  }
-
   async fetchGenreAndLanguage() {
     try {
-      const genreResponse: any = await this.movieService.getGenres();
+      const genreResponse: any = await this.tvService.getGenres();
       console.log("Genres: "+genreResponse.genres)
       if (genreResponse.genres) {
         this.genres = genreResponse.genres;
       }
 
-      const languageResponse: any = await this.movieService.getLanguages();
+      const languageResponse: any = await this.tvService.getLanguages();
       console.log("Language: "+languageResponse)
       if (languageResponse) {
         this.languages = languageResponse;
@@ -104,6 +98,11 @@ export class MoviesComponent implements OnInit {
   handleLanguageChange(event: any) {
     this.languageURL = event.target.value;
     this.fetchData();
+  }
+
+  addToFavorites(movie: any) {
+    console.log("fav movie= "+movie)
+    this.favoritesService.addToFavorites(movie);
   }
 
   handleGenreChange(event: any) {

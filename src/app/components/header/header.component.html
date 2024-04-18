@@ -1,24 +1,23 @@
 <header>
   <div class="container">
     <div class="logo">
-      <p style="display: flex; align-items: center; color: aliceblue; margin-left: 10px; font-size: medium; font-weight: bolder;">
+      <p>
         <mat-icon aria-hidden="false" aria-label="Play button">play_circle_outline</mat-icon>
         Media Play
       </p>
     </div>
     <nav>
       <ul>
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
         <li><a routerLink="/movies" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Movies</a></li>
-        <li><a routerLink="/tv-shows" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">TV Shows</a>
+        <li><a routerLink="/tvshows" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">TV Shows</a>
         </li>
         <li><a routerLink="/favorites" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Favorites</a>
         </li>
       </ul>
     </nav>
     <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <button>
+      <input type="text" placeholder="Search..." hidden>
+      <button hidden>
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon>
       </button>
     </div>

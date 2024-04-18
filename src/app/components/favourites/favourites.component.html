@@ -1,0 +1,12 @@
+<div>
+    <h2 class="center-text">Favorites</h2>
+    <div class="movie-list-container">
+        <div class="movie-list">
+            <div *ngFor="let m of favoritesList; let i = index" class="movie-card">
+                <img [src]="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="Movie Poster" class="movie-poster">
+                <button class="add-to-favorites-button" (click)="removeFromFavorites(i)">Remove</button>
+            </div>
+
+        </div>
+    </div>
+</div>

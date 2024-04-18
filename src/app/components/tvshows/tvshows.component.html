@@ -1,6 +1,7 @@
 <div>
     <div class="main-container">
         <aside class="advance-search-sidebar">
+
             <div class="sidebar-section">
                 <h3 class="sidebar-heading">Release Date</h3>
                 <ul class="sidebar-list">
@@ -37,12 +38,14 @@
 
         <div class="movie-list-container">
             <div class="movie-list">
-                <div *ngFor="let m of movieList;" class="movie-card">
+                <div *ngFor="let m of tvList;" class="movie-card">
                     <img [src]="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="Movie Poster"
                         class="movie-poster">
                     <button class="add-to-favorites-button" (click)="addToFavorites(m)">Add to Favorites</button>
+
                 </div>
             </div>
+
         </div>
     </div>
 </div>

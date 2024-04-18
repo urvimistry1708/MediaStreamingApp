@@ -24,10 +24,22 @@ interface Movies{
   providedIn: 'root'
 })
 export class MoviesService {
-private ApiURL="https://api.themoviedb.org/3/discover/movie?api_key=5885fe9dd784d8e0af439f0d75b6dda5";
+  private apiKey="5885fe9dd784d8e0af439f0d75b6dda5";
+  private baseURL="https://api.themoviedb.org/3";
   constructor(private http:HttpClient) { }
 
-  public getMovies():Observable<Movies>{
-    return this.http.get<Movies>(this.ApiURL);
+  getMovies(params: any) {
+    const url = `${this.baseURL}/discover/movie?api_key=${this.apiKey}&${params}`;
+    return this.http.get(url).toPromise();
+  }
+
+  getGenres() {
+    const url = `${this.baseURL}/genre/movie/list?api_key=${this.apiKey}`;
+    return this.http.get(url).toPromise();
+  }
+
+  getLanguages() {
+    const url = `${this.baseURL}/configuration/languages?api_key=${this.apiKey}`;
+    return this.http.get(url).toPromise();
   }
 }

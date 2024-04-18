@@ -1,0 +1,200 @@
+.main-container {
+    display: flex;
+    
+  }
+
+  .movie-card {
+    position: relative;
+    /* Ensure the movie card is positioned relative */
+  }
+  
+  .add-to-favorites-button {
+    position: absolute;
+    /* Position the button absolutely */
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    /* Set background color to white */
+    color: black;
+    /* Set text color to black */
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+    /* Ensure the button appears on top */
+  }
+  
+  .add-to-favorites-button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .advance-search-sidebar {
+    width: 250px;
+    height: auto !important;
+    background-color: var(--lightblue);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Sidebar section styling */
+  .sidebar-section {
+    margin: 20px;
+  }
+  
+  /* Sidebar caption styling */
+  .sidebar-caption {
+    width: 100%;
+    background-color: var(--lightblue);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    color: var(--primary);
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+  }
+  
+  /* Sidebar heading styling */
+  .sidebar-heading {
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  /* Sidebar list styling */
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Date input styling */
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: var(--primary);
+  }
+  
+  /* Language select styling */
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: var(--primary);
+  }
+  
+  #language option[value=""] {
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* Checkbox label styling */
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--primary);
+  }
+  
+  /* Checkbox styling */
+  .styled-checkbox {
+    margin-right: 8px;
+    color: var(--primary);
+  }
+  
+  /* Styles for movie list */
+  .movie-list-container {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    width: 100%;
+  }
+  
+  /* Styles for movie cards */
+  .movie-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-height: 330px;
+  }
+  
+  .movie-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .movie-poster {
+    height: auto;
+    max-height: 330px;
+    border-radius: 8px;
+  }
+  
+  .advance-search-pagination {
+    flex: 1;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .advance-search-previous-button , .advance-search-next-button{
+    width: 90px;
+    text-decoration: none !important;
+    border-radius: 10px;
+    color: var(--primary);
+    padding: 8px;
+    border: none;
+  }
+  
+  .advance-search-next-button{
+    margin-right: 5px; 
+    margin-left: auto;
+  }
+  
+  .advance-search-previous-button{
+    margin-right: auto; 
+    margin-left: 5px;
+  }
+  
+  .advance-search-previous {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    flex-wrap: wrap;
+   
+  }
+  
+  .advance-search-next{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
+  
+  .advance-search-components {
+    width: 100%;
+    display: flex;
+  }
+  
+  .advance-search-hidden {
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
