@@ -36,11 +36,6 @@ Media Play is a video streaming website where you stream your favorite movies an
 - Ishita: Homepage
 - Shyam: Add and Remove from favourites
 
-## Credentials for User Login
-
-- Phone number: 834-755-1519
-- Password: Abhay@123
-
 ## Installation
 
 1. Clone the repository to your local machine.
