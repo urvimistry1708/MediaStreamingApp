@@ -38,9 +38,26 @@ Media Play is a video streaming website where you stream your favorite movies an
 
 ## Installation
 
-1. Clone the repository to your local machine.
-2. Set up the necessary dependencies and environment configurations.
-3. Run the application on your preferred development environment.
+1. Set up the environment to run the angular application by installing Node.js, NPM and Angular CLI
+2. Clone the repository to your local machine.
+3. run on terminal: npm i
+4. Set up the necessary dependencies and environment configurations.
+5. Run the application on your preferred development environment using: npm start.
+
+
+## Open API
+
+ - For Movies 
+   https://www.themoviedb.org/movie
+
+ - For TV Shows
+   https://www.themoviedb.org/tv
+
+ - For Genres
+   https://api.themoviedb.org/3/genre/movie/list?api_key=YOUR_API_KEY
+   
+ - For Languages
+   https://api.themoviedb.org/3/configuration/languages?api_key=
 
 ## Usage
 
