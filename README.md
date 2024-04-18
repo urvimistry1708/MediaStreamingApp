@@ -17,6 +17,15 @@ Media Play is a video streaming website where you stream your favorite movies an
 - Filter TV shows by Release Date, Language and Genres
 ![image](https://github.com/2024-Winter-ITE-5425-0NB/angular-project-client-theuisquads/assets/97482188/0c3d84dc-9f8c-4c28-b689-6e24bea029a1)
 
+- Add to favourites
+![image](https://github.com/2024-Winter-ITE-5425-0NB/angular-project-client-theuisquads/assets/97482188/37edde61-fb5c-4bc3-89de-df86865c9d24)
+
+- View Favourites
+![image](https://github.com/2024-Winter-ITE-5425-0NB/angular-project-client-theuisquads/assets/97482188/0970149c-e6af-4e11-b4a9-efe2ab9b49ee)
+
+- View Favourites after removing
+![image](https://github.com/2024-Winter-ITE-5425-0NB/angular-project-client-theuisquads/assets/97482188/6f5200b8-9ac2-4149-abda-1324e3842116)
+
 ## Division of work
 
 - Spencer: UI/UX, TV Shows Page, Backend API
